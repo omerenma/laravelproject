@@ -6,7 +6,7 @@
   <div class="col-md-9 pull-left">
 <form method="post" action="{{route('projects.store')}}">
   {{ csrf_field() }}
-  <!-- <input type="hidden" name="_method" value="post"> -->
+ 
   <div class="form-group">
     <label for="company-name">Name<span class="required">*</span></label>
     <input type="text" 
@@ -17,7 +17,7 @@
     spellcheck="false" 
     placeholder="Enter name">
 
-    
+     <input type="hidden" name="_method" value="post"> 
      <input type="text" 
     class="form-control"
    

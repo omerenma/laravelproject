@@ -3,7 +3,7 @@
 @section('content')
 
 <div  style="float: right; margin-right: 300px">
-<a class=" btn btn-primary pull-right" href="/projects/create">Create company</a>
+<a class=" btn btn-primary pull-right" href="/projects/create">Create project</a>
 </div> 
  <div class="card" style="width: 500px; margin-left: 400px; border:1px solid blue;">
   <div class="card-body" style="height: 10px; background-color: blue; color:white">

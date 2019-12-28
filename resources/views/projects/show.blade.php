@@ -12,9 +12,77 @@
     </div>
   </div>
 
+<br>
+<div class="row container-fluid" style="background-color: #fff">
+  <div class="col-md-9">
+  <form method="post" action="{{route('comments.store')}}">
+  {{ csrf_field() }}
+   <input type="hidden" name="commentable_type" value="App\Project"> 
+  <input type="hidden" name="commentable_id" value="{{$projects->id}}"> 
+
+   <div class="form-group">
+    <label for="comment-content">Body<span class="required">*</span></label>
+
+     <textarea type="text" 
+    style="resize: vertical"
+    class="form-control autosize-target text-left" 
+    rows="5"
+    spellcheck="false" 
+    class="form-control"
+    id="comment-content"
+    name="body" 
+    spellcheck="false" 
+    placeholder="Enter comment">
+     
+    </textarea>
+
+  
+   
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="form-group">
+    <label for="comment-content">Url (proof of work done)<span class="required">*</span></label>
+
+     <textarea type="text" 
+    style="resize: vertical"
+    class="form-control autosize-target text-left" 
+    rows="2"
+    spellcheck="false" 
+    class="form-control"
+    id="comment-content"
+    name="url" 
+    spellcheck="false" 
+    placeholder="Enter url or screenshots">
+     
+    </textarea>
+
+  
+   
+  </div>
+
+
+
+
+
+  
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  </div>
+</div>
+
+
   <div class="container">
     <div class="row" style="background-color: #fff; margin: 10px">
-    	{{-- @foreach($projects->projects as $project)
+    	{{-- @foreach($projects->projects as $projects)
       <div class="col-md-4">
         <h2>{{$project->name}}</h2>
         <p> {{$project->description}}</p>
@@ -37,7 +105,6 @@
         <ol class="list-unstyled">
           <li><a href="/projects/{{$projects->id}}/edit">Edit</a></li>
           <li><a href="/projects/create">Add projects</a></li>
-          <li><a href="/projects/create">Create company</a></li>
           <li><a href="/projects">View projects</a></li>
           <br>
           <li>

@@ -45,10 +45,11 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request  $request)
     {
         //
         if(Auth::check()){
+
             $project = Project::create([
                 'name' => $request->input('name'),
                 'description' => $request->input('description'),
@@ -123,7 +124,7 @@ class ProjectsController extends Controller
     public function destroy(Project $project)
     {
         //
-         $findTodelete = Project::find($company->id);
+         $findTodelete = Project::find($project->id);
                 if($findTodelete->delete()){
                     return redirect()->route('projects.index')->with('success', 'Project deleted successfully');
                 }else{

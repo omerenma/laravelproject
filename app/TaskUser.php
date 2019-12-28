@@ -11,5 +11,9 @@ class TaskUser extends Model
     	'task_id',
     	'user_id'
 
-    ]
+    ];
+
+    public function comments(){
+    	return $this->morphMany('App\Comment', 'commentable');
+    }
 }

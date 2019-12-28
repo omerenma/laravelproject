@@ -17,6 +17,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
          'email', 
          'password',
     ];
@@ -61,6 +62,10 @@ class User extends Authenticatable
      public function projects(){
         return $this->belongsToMany('App\Project');
     } 
+
+    public function comment(){
+        return $this->morphMany('App\Comment', 'commentable');
+    }
 
 
 }
